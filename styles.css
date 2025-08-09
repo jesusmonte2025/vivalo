@@ -29,6 +29,13 @@ body {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+    .header {
+        position: relative;
+        background: rgba(255, 255, 255, 0.98);
+    }
+}
+
 .navbar {
     padding: 1rem 0;
 }
@@ -40,6 +47,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 15px;
+    }
 }
 
 .logo {
@@ -788,30 +803,42 @@ elegir Vívalo? */
     }
 }
 
-/ * Responsive Design */ @media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 768px) {
     .hamburger {
-        display: flex;
+        display: none;
     }
 
     .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
+        display: flex;
         flex-direction: column;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
+        gap: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
     }
 
     .nav-menu li {
-        margin: 1rem 0;
+        margin: 0;
+    }
+
+    .nav-menu a {
+        padding: 8px 15px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background: #ff6b35;
+        color: white;
+    }
+
+    .hero {
+        margin-top: 0;
     }
 
     .hero-content h1 {
@@ -1140,6 +1167,13 @@ Estilos para páginas individuales */
     color: white;
     position: relative;
     margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+    .page-banner {
+        margin-top: 0;
+        height: 50vh;
+    }
 }
 
 .banner-content h1 {
